@@ -5,6 +5,7 @@ mod structs;
 mod enums;
 mod modules_crates;
 mod vectors;
+mod strings;
 
 fn main() {
     // temperature::run();
@@ -13,5 +14,6 @@ fn main() {
     // structs::run();
     // enums::run();
     // modules_crates::run();
-    vectors::run()
+    // vectors::run()
+    strings::run();
 }

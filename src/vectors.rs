@@ -4,6 +4,7 @@ pub fn run() {
     indexing_vec_with_get(true);
     indexing_vec_with_get(false);
     dereferencing_vec();
+    vec_with_multiple_types();
 }
 
 fn indexing_vec_with_get(index_exists: bool) {
@@ -37,4 +38,22 @@ fn dereferencing_vec() {
         *i *= 10;
     }
     println!("After dereferencing\n{:?}", v);
+}
+
+// Vecs store values of a single type.
+// In order to create vecs of different types, enums can store different types
+#[derive(Debug)]
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+
+fn vec_with_multiple_types() {
+    let multi_vector = vec![
+        SpreadsheetCell::Text(String::from("Silly Billy")),
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Float(9.0),
+    ];
+    println!("{:?}", multi_vector);
 }
