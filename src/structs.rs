@@ -11,7 +11,7 @@ struct User {
 pub fn run() {
     let user1 = User {
         email: String::from("abc@xyz.com"),
-        username: String::from("xxXUltraGamerXxx"),
+        username: String::from("Gamer"),
         sign_in_count: 1,
         active: true,
     };
@@ -22,8 +22,8 @@ pub fn run() {
     };
     println!("{:?}", user2);
     let mut user3 = User::new(
-        "poopshitter@hotmail.com".to_string(),
-        "disocrd_super_mod".to_string(),
+        "lastname@nonspecificmail.com".to_string(),
+        "super_123".to_string(),
     );
     user3.username_change(String::from("discord_ultra_mod"));
     println!("{:#?}", user3);
