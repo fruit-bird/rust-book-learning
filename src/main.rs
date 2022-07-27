@@ -2,6 +2,7 @@ mod collections_ex1;
 mod collections_ex2;
 mod collections_ex3;
 mod enums;
+mod errors;
 mod fibonacci;
 mod hashmaps;
 mod modules_crates;
@@ -23,5 +24,6 @@ fn main() {
     // hashmaps::run();
     // collections_ex1::run();
     // collections_ex2::run();
-    collections_ex3::run();
+    // collections_ex3::run();
+    errors::run();
 }
