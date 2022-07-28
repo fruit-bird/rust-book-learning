@@ -28,7 +28,7 @@ mod back_of_house {
 
 pub fn run() {
     // Absolute path, advised to use
-    crate::modules_crates::front_of_house::hosting::add_to_waitlist();
+    crate::c07_modules_crates::front_of_house::hosting::add_to_waitlist();
     // Relative path
     front_of_house::hosting::add_to_waitlist();
     

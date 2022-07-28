@@ -1,15 +1,27 @@
 #![allow(dead_code, unused_variables)]
 
 use std::{
-    fs::{File, self},
+    // error::Error,
+    fs::{self, File},
     io::{self, Read, Write},
     thread::sleep,
     time::Duration,
 };
 
+// -> Result<(), Box<dyn Error>>
 pub fn run() {
     // unrecoverable_errors();
-    library_panic();
+    // library_panic();
+
+    // let username = read_username_from_file_question_shortest(String::from("~/Desktop/lol.txt"))?;
+    // // println!("{}", username);
+    // if username == "Maurice".to_string() {
+    //     println!("Success");
+    // } else {
+    //     panic!("YOU DONE FUCKED UP!!");
+    // };
+
+    // Ok(())
 }
 
 fn unrecoverable_errors() {
@@ -73,14 +85,20 @@ fn read_username_from_file_question(file_path: String) -> Result<String, io::Err
 
 fn read_username_from_file_question_shorter(file_path: String) -> Result<String, io::Error> {
     let mut s = String::new();
-    let mut f = File::open(file_path)?.read_to_string(&mut s)?;
+    let f = File::open(file_path)?.read_to_string(&mut s)?;
     Ok(s)
 }
 
 fn read_username_from_file_question_shortest(file_path: String) -> Result<String, io::Error> {
     // Reading from a file to a string is such a common occurence
     // that there's a one liner for it
-    // It returns a Result containing 
+    // It returns a Result containing
     // the String or the Error
     fs::read_to_string(file_path)
+}
+
+fn unwrap_when_err_is_impossible() {
+    use std::net::IpAddr;
+    // 127.0.0.1 is a vaild address, no need to check for error, so unwrap is acceptable
+    let home = "127.0.0.1".parse::<IpAddr>().unwrap();
 }
